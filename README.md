@@ -14,12 +14,14 @@ My personal software engineering portfolio website!
 * **Language:** [TypeScript](https://www.typescriptlang.org/)
 * **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 * **Deployment:** [Vercel](https://vercel.com/)
-* **Contact Form Backend:** [Formspree](https://formspree.io/) * **Version Control:** Git & [GitHub](https://github.com/)
-* **Package Manager:** [npm](https://www.npmjs.com/) * **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+* **Contact Form Backend:** [Formspree](https://formspree.io/)
+* **Version Control:** Git & [GitHub](https://github.com/)
+* **Package Manager:** [npm](https://www.npmjs.com/)
+* **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
 
 ## ☁️ Deployment
 
-This site is deployed on [Vercel](https://vercel.com/). The deployment process is automated via Vercel's CI/CD integration with GitHub:
+This site is deployed on [Vercel](https://vercel.com/). The deployment process is automated via Vercel's CI/CD integration with GitHub
 
 ## 📄 License
 

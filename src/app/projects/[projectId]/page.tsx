@@ -27,9 +27,7 @@ export async function generateMetadata({
   };
 }
 
-export default function ProjectDetailPage({
-  params,
-}: Readonly<ProjectDetailPageProps>) {
+export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   console.log(params.projectId);
   const projectId = params.projectId;
   const project = getProjectById(projectId);

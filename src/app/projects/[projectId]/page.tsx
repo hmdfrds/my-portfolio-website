@@ -4,16 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
-interface ProjectDetailPageProps {
-  params: {
-    projectId: string; // This must match the folder name '[projectId]'
-  };
-}
+type ProjectParams = Promise<{ projectId: string }>;
 
-export async function generateMetadata({
-  params,
-}: ProjectDetailPageProps): Promise<Metadata> {
-  const project = getProjectById(params.projectId);
+export async function generateMetadata(props: {
+  params: ProjectParams;
+}): Promise<Metadata> {
+  const { projectId } = await props.params;
+  const project = getProjectById(projectId);
 
   if (!project) {
     return {
@@ -27,9 +24,12 @@ export async function generateMetadata({
   };
 }
 
-export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-  console.log(params.projectId);
-  const projectId = params.projectId;
+export default async function ProjectDetailPage(
+  props: Readonly<{
+    params: ProjectParams;
+  }>
+) {
+  const { projectId } = await props.params;
   const project = getProjectById(projectId);
 
   if (!project) {
@@ -148,7 +148,6 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
     </article>
   );
 }
-
 export async function generateStaticParams() {
   return projectData.map((project) => ({
     projectId: project.id,
